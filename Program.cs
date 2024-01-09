@@ -39,7 +39,8 @@
 
     // 클래스 설정 ( 캐릭터, 몬스터, 아이템 )
 
-    // 0. 스타트 화면 (한 번만 표시) -> 캐릭터 생성, 이름 및 직업 선택
+    //    스타트 화면 (한 번만 표시) -> 
+    // 0. 캐릭터 생성, 이름 및 직업 선택
     // 1. 시작 화면
     // 2. 상태 보기 
     // 3. 인벤토리 - 장착, 해제 등
@@ -142,7 +143,7 @@
 
         public void PrintItemStatDescription(bool withNumber = false, int idx = 0, bool showPrice = false ) // 아이템 스탯 및 번호 출력 관련 함수
         {
-        Console.WriteLine();
+          Console.WriteLine();
         }
 
 
