@@ -53,30 +53,30 @@ namespace TextRPG3
 
 
 
-    public enum JobType // 직업 enum
-    {
-        Warrior,
-        Mage,
-        Theif,
-        Programmer,
-    }
+    //public enum JobType // 직업 enum, 일단 원래 배운 방식대로 구현 
+    //{
+    //    Warrior,
+    //    Mage,
+    //    Theif,
+    //    Programmer,
+    //}
 
-    public class Character
+    public class Character // 플레이어 캐릭터 클래스
     {
-        public string Name { get; } // 이름 및 직업은 생성 시에만 설정하고, 게임 중에는 바뀌지 않기 때문에 get;만 설정
-        public JobType Job { get; }
+        public string Name { get; } // 이름 및 직업은 생성 시에만 설정 할 거고, '게임 중'에는 바뀌지 않기 때문에 get;만 설정
+        public string Job { get; }
         public int Level { get; set; }
-        public int Exp { get; set; } // 경험치
+        public int Exp { get; set; } // 레벨업을 위한 경험치
         public int Atk { get; set; }
         public int Def { get; set; }
 
-        //public int Speed { get; set; } // Atk, Def 처럼 레벨업에 따라 변하며, 아이템 장착 유무 및 회피 기능에 연관
+        //public int Speed { get; set; } // Atk, Def 처럼 레벨업에 따라 변하며, 아이템 장착 유무 및 회피 기능에 연관, 미구현
         public int Hp { get; set; }
         public int Mp { get; set; }
         public int Gold { get; set; }
 
 
-        public Character(string name, JobType job, int level, int exp, int atk, int def, int hp, int mp, int gold)
+        public Character(string name, string job, int level, int exp, int atk, int def, int hp, int mp, int gold)
         {
             Name = name;
             Job = job;
@@ -94,9 +94,7 @@ namespace TextRPG3
         // 
     }
 
-
-
-    public class Monster
+    public class Monster // 몬스터 클래스
     {
         public string Name { get; }
         public int Level { get; }
@@ -113,14 +111,15 @@ namespace TextRPG3
 
     }
 
-
-    public class Item
+    public class Item // 아이템 클래스
     {
         public string Name { get; }
         public string Desctription { get; }
         public int Type { get; }  // 3개로 할까 함, 무기-방어구-악세서리
         public int Atk { get; set; }
         public int Def { get; set; }
+
+        // public int Hp { get; }   물약 구현 때문에 아이템에도 int hp를 해봐야하나? 일단 대기
         public int Gold { get; set; }
         public bool IsEquipped { get; set; } // 장착 여부
         public bool IsPurchased { get; set; } // 구매 여부
@@ -135,8 +134,8 @@ namespace TextRPG3
             Atk = atk;
             Def = def;
             Gold = gold;
-            IsEquipped = isEquipped;
-            IsPurchased = isPurchased;
+            IsEquipped = isEquipped;    // 장착 여부
+            IsPurchased = isPurchased;  // 구매 여부
         }
 
         public void PrintItemStatDescription(bool withNumber = false, int idx = 0, bool showPrice = false ) 
@@ -144,13 +143,13 @@ namespace TextRPG3
         {
           Console.WriteLine("- ");
 
-            if (withNumber) // 7-4 아이템 번호 컬러
+            if (withNumber) // 아이템 번호 표시 + 컬러링
             {
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.Write("{0} ", idx);
                 Console.ResetColor();
             }
-            if (IsEquipped) // 아이템 착용 시
+            if (IsEquipped) // 아이템 착용 시 + 컬러링
             {
                 Console.Write("[");
                 Console.ForegroundColor = ConsoleColor.Cyan; //   [ 의 뒤의 색 변경
@@ -159,8 +158,8 @@ namespace TextRPG3
                 Console.Write("]");
                 Console.Write(PadRightForMixedText(Name, 9)); // 장착 중인 경우는 9글자 출력, 텍스트 정렬 함수 사용
             }
-            // 0이 아니라면 출력해라 + 삼항 연산자
-            if (Atk != 0) Console.Write($"Atk {(Atk >= 0 ? " + " : "")}{Atk}");  // 공격력이 0보다 크거나 같으면 "+" 를 붙이고 아니면 " "해라(공백).
+            // 0이 아니라면 출력할건데, + 삼항 연산자 조건에 따라 할 거야.
+            if (Atk != 0) Console.Write($"Atk {(Atk >= 0 ? " + " : "")}{Atk}"); // 스탯이 0보다 크거나 같으면 "+" 를 붙이고 아니면 " "해라(공백).
             if (Def != 0) Console.Write($"Def {(Def >= 0 ? " + " : "")}{Def}");
         }
 
@@ -201,6 +200,7 @@ namespace TextRPG3
 
         static void Main(string[] args)
         {
+            GameDataSetting(); 
             PrintStartLogo();
             StartMenu(); // 시작 메뉴
             //CreatePlayerMenu(); // 캐릭터 생성 메뉴, 추후 만들면 StartMenu랑 스왑 예정, 일단 구현 X
@@ -216,7 +216,7 @@ namespace TextRPG3
 
         }
 
-        private static void CreatePlayerMenu()
+        private static void CreatePlayerMenu() // 플레이어 생성 메뉴, 아직 미구현
         {
             throw new NotImplementedException();
         }
