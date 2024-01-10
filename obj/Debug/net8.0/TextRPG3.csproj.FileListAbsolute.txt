@@ -1,0 +1,15 @@
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\bin\Debug\net8.0\TextRPG3.exe
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\bin\Debug\net8.0\TextRPG3.deps.json
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\bin\Debug\net8.0\TextRPG3.runtimeconfig.json
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\bin\Debug\net8.0\TextRPG3.dll
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\bin\Debug\net8.0\TextRPG3.pdb
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\TextRPG3.GeneratedMSBuildEditorConfig.editorconfig
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\TextRPG3.AssemblyInfoInputs.cache
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\TextRPG3.AssemblyInfo.cs
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\TextRPG3.csproj.CoreCompileInputs.cache
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\TextRPG3.sourcelink.json
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\TextRPG3.dll
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\refint\TextRPG3.dll
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\TextRPG3.pdb
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\TextRPG3.genruntimeconfig.cache
+D:\WJJ_Project\source\repos\TextRPG3\TextRPG3\obj\Debug\net8.0\ref\TextRPG3.dll
